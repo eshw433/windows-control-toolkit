@@ -1,0 +1,28 @@
+[tool.poetry]
+name = "windows-control-toolkit"
+version = "2.1.0"
+description = "Privacy-focused Windows utility: network firewall monitor + smart download organizer"
+authors = ["Shokhlat Muradov"]
+license = "MIT"
+readme = "README.md"
+packages = [{include = "wct", from = "src"}]
+
+[tool.poetry.scripts]
+wct = "wct.main:main"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+PyQt6 = "^6.6"
+psutil = "^5.9"
+watchdog = "^4.0"
+pydantic = "^2.5"
+loguru = "^0.7"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.0"
+pytest-qt = "^4.3"
+pyinstaller = "^6.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
