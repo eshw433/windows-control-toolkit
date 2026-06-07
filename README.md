@@ -1,6 +1,16 @@
-# Windows Control Toolkit — v2.1 "Aurora"
+# Windows Control Toolkit — v2.2 "Aurora"
+
+<p align="center">
+  <img src="https://img.shields.io/badge/version-2.2.0-blue?style=for-the-badge&color=5cd0ff" alt="Version">
+  <img src="https://img.shields.io/badge/Python-3.12+-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python">
+  <img src="https://img.shields.io/badge/license-MIT-green?style=for-the-badge&color=4dd599" alt="License">
+  <img src="https://img.shields.io/badge/platform-Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white" alt="Platform">
+  <img src="https://img.shields.io/badge/website-live-9a7dff?style=for-the-badge" alt="Website">
+</p>
 
 **Автор:** Шохлат Мурадов (Shokhlat Muradov) · Telegram: @diver5 · **Финальный проект, 2026**
+
+**[Website](https://eshw433.github.io/windows-control-toolkit/) · [Releases](https://github.com/eshw433/windows-control-toolkit/releases) · [Issues](https://github.com/eshw433/windows-control-toolkit/issues)**
 
 ---
 

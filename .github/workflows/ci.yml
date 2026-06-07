@@ -30,3 +30,9 @@ jobs:
         run: |
           pip install pyinstaller
           pyinstaller WCT.spec --clean
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: WCT-build
+          path: dist/WCT.exe
