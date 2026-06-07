@@ -11,7 +11,9 @@ Windows Control Toolkit (WCT) — настольное приложение на
 1. **Кто и куда из ваших программ ходит в сеть** — живой монитор соединений + правила фаервола + риск-скоринг + DNS-кэш.
 2. **Что творится в папке «Загрузки» и в проекте** — сканер, организатор по правилам, поиск дубликатов, карантин и полный откат.
 
-Версия **2.1 «Aurora»** — диспетчер задач, инспектор процессов, планировщик, онбординг, live-графики, светлая тема, фильтры истории, drag & drop, PDF-экспорт и полный набор тестов. Никакой облачной телеметрии — всё локально.
+Версия **2.1 «Aurora»** — диспетчер задач, инспектор процессов, планировщик, онбординг, live-графики, светлая тема, фильтры истории, drag & drop, PDF-экспорт и полный набор тестов.
+
+**v2.2 «Aurora»** — добавлены: менеджер автозагрузки, USB-монитор, поиск по содержимому файлов и авто-обновление. Всё локально, без облачной телеметрии.
 
 ---
 
@@ -34,6 +36,15 @@ Windows Control Toolkit (WCT) — настольное приложение на
 | 11 | **Pytest тесты** | 6 тест-файлов: `test_rule_engine`, `test_exporter`, `test_stats`, `test_text_search`, `test_format`, `test_risk`. Запуск: `pytest tests/` |
 | 12 | **Секция "Все функции" в О проекте** | Полное описание всех 20 функций приложения прямо в About page с иконками и пояснениями |
 | 13 | **Исправление лагов** | Process Inspector и Task Manager переведены на `QThread`. Таймеры стартуют только при открытии страницы (`showEvent`/`hideEvent`). CPU poll использует `interval=None` |
+
+### v2.2 (2026-06-07) — новые функции
+
+| # | Функция | Описание |
+|---|---|---|
+| 14 | **Startup Manager** | Управление автозагрузкой Windows: сканирование реестра (HKCU/HKLM Run, RunOnce) и папок Startup. Включение, отключение и удаление записей |
+| 15 | **USB Monitor** | Мониторинг подключённых USB-накопителей через WMI и psutil. Отображение имени, буквы диска, размера и статуса |
+| 16 | **File Content Search** | Полнотекстовый поиск внутри файлов (TXT, PDF, DOCX). Поиск по папке с рекурсией, превью найденных строк и номера строк |
+| 17 | **Auto-updater** | Проверка обновлений через GitHub Releases API. Отображение текущей и последней версии, release notes, открытие страницы релиза в браузере |
 
 ### v2.0 "Aurora" (2026-05-16)
 
@@ -68,6 +79,10 @@ Windows Control Toolkit (WCT) — настольное приложение на
 | **Инспектор процессов** | Детальный просмотр процессов + sparkline CPU-истории. Завершение процесса |
 | **Диспетчер задач** | Live CPU/RAM шкалы + таблица всех процессов. Завершение задач |
 | **Планировщик** | Управление периодическими задачами из UI |
+| **Автозагрузка** | Управление записями реестра и папками Startup. Вкл/выкл/удаление |
+| **USB монитор** | Подключённые USB-накопители: имя, буква, размер, статус |
+| **Поиск по файлам** | Полнотекстовый поиск в TXT, PDF, DOCX. Превью и номера строк |
+| **Обновления** | Проверка релизов на GitHub, просмотр release notes, скачивание |
 | **Настройки** | 6 тем, 3 языка, автозапуск, тихие часы, интервал опроса |
 | **О проекте** | Системная информация, live-метрики, плагины, все функции, changelog |
 
@@ -101,6 +116,15 @@ Windows Control Toolkit (WCT) — настольное приложение на
 | **Drag & Drop Rules** | Перетащить файл/папку на страницу File Rules для быстрого создания правила |
 | **PDF Export** | `export_pdf()` в `exporter.py` (через reportlab, fallback на текст) |
 | **Pytest Tests** | 6 тест-файлов: rule_engine, exporter, stats, text_search, format, risk |
+
+### Новые функции (v2.2)
+
+| Функция | Описание |
+|---|---|
+| **Startup Manager** | Управление автозагрузкой Windows: реестр (HKCU/HKLM Run, RunOnce) + папки Startup |
+| **USB Monitor** | Мониторинг USB-накопителей через WMI и psutil |
+| **File Content Search** | Полнотекстовый поиск в TXT, PDF, DOCX с превью и номерами строк |
+| **Auto-updater** | Проверка обновлений через GitHub Releases, просмотр release notes, скачивание |
 
 ---
 
@@ -190,16 +214,19 @@ final_project/
     │   │   ├── bandwidth.py · bandwidth_service.py
     │   │   ├── dns_cache.py · geoip.py · port_registry.py
     │   │   └── risk.py · risk_scorer.py
-    │   └── files/
-    │       ├── scanner.py · service.py · actions.py · models.py
-    │       ├── rule_engine.py · templates.py · monitor.py
-    │       ├── dedupe.py · dedupe_pro.py · size_analyzer.py
+    │   ├── files/
+    │   │   ├── scanner.py · service.py · actions.py · models.py
+    │   │   ├── rule_engine.py · templates.py · monitor.py
+    │   │   ├── dedupe.py · dedupe_pro.py · size_analyzer.py
+    │   │   └── content_search.py
+    │   └── system/
+    │       ├── startup_manager.py · usb_monitor.py
     │
     ├── shared/
     │   └── models.py          # общие enum/dataclass
     │
     └── ui/
-        ├── main_window.py     # sidebar · 15 страниц · Ctrl+K · Ctrl+R · Ctrl+Q
+        ├── main_window.py     # sidebar · 23 страницы · Ctrl+K · Ctrl+R · Ctrl+Q
         ├── theme.py           # PALETTE · PRESETS · stylesheet_for(name)
         ├── widgets/
         │   ├── stat_card.py · sparkline.py · search_box.py · progress_chip.py
@@ -211,6 +238,9 @@ final_project/
             ├── downloads_page.py · file_rules_page.py
             ├── duplicates_page.py · disk_hogs_page.py · quarantine_page.py
             ├── history_page.py · notifications_page.py
+            ├── process_inspector_page.py · task_manager_page.py
+            ├── scheduler_page.py · startup_page.py · usb_page.py
+            ├── content_search_page.py · updater_page.py
             ├── settings_page.py
             └── about_page.py
 ```
@@ -235,9 +265,9 @@ final_project/
 
 ## Командная палитра (Ctrl + K)
 
-28+ команд из коробки, сгруппированы по `Navigation`, `View`, `System`, `App`:
+35+ команд из коробки, сгруппированы по `Navigation`, `View`, `System`, `App`:
 
-- `nav.*` — мгновенный переход на любую из 15 страниц
+- `nav.*` — мгновенный переход на любую из 23 страниц
 - `action.open_data` / `open_logs` / `open_quarantine` / `open_backups`
 - `action.copy_diag` / `save_diag` — копировать/сохранить полный диагностический отчёт
 - `action.check_updates` — проверить GitHub Releases
@@ -311,16 +341,17 @@ python -m wct.main
 
 | Метрика | Значение |
 |---|---|
-| Файлов исходного кода (`*.py`) | 90+ |
-| Строк Python (без `__pycache__`) | 14 000+ |
+| Файлов исходного кода (`*.py`) | 100+ |
+| Строк Python (без `__pycache__`) | 15 000+ |
 | Таблиц в БД | 20 |
-| Страниц UI | 19 |
-| Команд палитры | 31 |
+| Страниц UI | 23 |
+| Команд палитры | 35+ |
 | Тем (пресетов) | 6 |
 | Плагинов (builtin) | 12 |
 | Языков интерфейса | 3 (en / ru / az) |
-| Ключей переводов | 420+ |
+| Ключей переводов | 440+ |
 | Тест-файлов (pytest) | 6 |
+| Модулей системы | 3 (network, files, system) |
 
 ---
 
