@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Windows Control Toolkit — v2.2 Aurora</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">
+            <span class="nav-logo">WCT</span>
+            <span class="nav-tag">Aurora v2.2</span>
+        </div>
+        <div class="nav-links">
+            <a href="#features">Features</a>
+            <a href="#screenshots">Screenshots</a>
+            <a href="#tech">Tech</a>
+            <a href="https://github.com/eshw433/windows-control-toolkit" class="nav-cta">GitHub</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-glow"></div>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="badge-dot"></span>
+                Windows Control Toolkit v2.2
+            </div>
+            <h1 class="hero-title">
+                Your Windows.<br>
+                <span class="gradient-text">Under Control.</span>
+            </h1>
+            <p class="hero-subtitle">
+                Privacy-first desktop utility for real-time network monitoring and intelligent file management.
+                <strong>Zero cloud telemetry. 100% local.</strong>
+            </p>
+            <div class="hero-stats">
+                <div class="stat">
+                    <div class="stat-value">23</div>
+                    <div class="stat-label">UI Pages</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">15k+</div>
+                    <div class="stat-label">Lines of Code</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">3</div>
+                    <div class="stat-label">Languages</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">6</div>
+                    <div class="stat-label">Themes</div>
+                </div>
+            </div>
+            <div class="hero-cta">
+                <a href="https://github.com/eshw433/windows-control-toolkit/releases" class="btn-primary">
+                    Download WCT.exe
+                </a>
+                <a href="https://github.com/eshw433/windows-control-toolkit" class="btn-secondary">
+                    View Source
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Capabilities</span>
+                <h2>Everything You Need</h2>
+                <p>Network monitoring, file management, system tools — all in one place.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">&#9889;</div>
+                    <h3>Network Monitor</h3>
+                    <p>Real-time TCP/UDP connection tracking with DNS resolution, GeoIP, and risk scoring.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">&#9968;</div>
+                    <h3>Firewall Rules</h3>
+                    <p>Create Windows Firewall rules with one click. Block apps by path, port, or protocol.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">&#9733;</div>
+                    <h3>Startup Manager</h3>
+                    <p>Control registry Run keys and Startup folders. Enable, disable, or delete entries.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">&#128424;</div>
+                    <h3>USB Monitor</h3>
+                    <p>Detect connected USB drives with size, status, and drive letter via WMI.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">&#128269;</div>
+                    <h3>Content Search</h3>
+                    <p>Full-text search inside TXT, PDF, and DOCX files with preview and line numbers.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">&#8593;</div>
+                    <h3>Auto Updater</h3>
+                    <p>Check GitHub Releases for updates. View release notes and download instantly.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">&#128193;</div>
+                    <h3>File Organizer</h3>
+                    <p>Auto-sort Downloads with 16 built-in templates. Preview before applying.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">&#11093;</div>
+                    <h3>Duplicates</h3>
+                    <p>Find duplicates by SHA-256. Clean with smart strategies and see freed space.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">&#9881;</div>
+                    <h3>Task Manager</h3>
+                    <p>Live CPU/RAM bars, process table with sorting, and one-click termination.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="screenshots" class="screenshots">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Gallery</span>
+                <h2>Screenshots</h2>
+                <p>See WCT in action across all 23 pages.</p>
+            </div>
+            <div class="screenshot-tabs">
+                <button class="tab-btn active" data-tab="network">Network</button>
+                <button class="tab-btn" data-tab="dashboard">Dashboard</button>
+                <button class="tab-btn" data-tab="files">Files</button>
+                <button class="tab-btn" data-tab="system">System</button>
+                <button class="tab-btn" data-tab="all">All</button>
+            </div>
+            <div class="screenshot-grid" id="screenshot-grid">
+                <div class="screenshot-item" data-category="network">
+                    <img src="screenshots/dashboard.png" alt="Dashboard" loading="lazy">
+                    <div class="screenshot-overlay">Dashboard</div>
+                </div>
+                <div class="screenshot-item" data-category="network">
+                    <img src="screenshots/network.png" alt="Network Monitor" loading="lazy">
+                    <div class="screenshot-overlay">Network Monitor</div>
+                </div>
+                <div class="screenshot-item" data-category="network">
+                    <img src="screenshots/firewall.png" alt="Firewall Rules" loading="lazy">
+                    <div class="screenshot-overlay">Firewall Rules</div>
+                </div>
+                <div class="screenshot-item" data-category="network">
+                    <img src="screenshots/bandwidth.png" alt="Bandwidth" loading="lazy">
+                    <div class="screenshot-overlay">Bandwidth Tracker</div>
+                </div>
+                <div class="screenshot-item" data-category="network">
+                    <img src="screenshots/risk.png" alt="Risk Center" loading="lazy">
+                    <div class="screenshot-overlay">Risk Center</div>
+                </div>
+                <div class="screenshot-item" data-category="network">
+                    <img src="screenshots/trust.png" alt="Trust Decisions" loading="lazy">
+                    <div class="screenshot-overlay">Trust Decisions</div>
+                </div>
+                <div class="screenshot-item" data-category="files">
+                    <img src="screenshots/downloads.png" alt="Downloads" loading="lazy">
+                    <div class="screenshot-overlay">Downloads</div>
+                </div>
+                <div class="screenshot-item" data-category="files">
+                    <img src="screenshots/file_rules.png" alt="File Rules" loading="lazy">
+                    <div class="screenshot-overlay">File Rules</div>
+                </div>
+                <div class="screenshot-item" data-category="files">
+                    <img src="screenshots/duplicates.png" alt="Duplicates" loading="lazy">
+                    <div class="screenshot-overlay">Duplicates</div>
+                </div>
+                <div class="screenshot-item" data-category="files">
+                    <img src="screenshots/disk_hogs.png" alt="Disk Hogs" loading="lazy">
+                    <div class="screenshot-overlay">Disk Hogs</div>
+                </div>
+                <div class="screenshot-item" data-category="files">
+                    <img src="screenshots/quarantine.png" alt="Quarantine" loading="lazy">
+                    <div class="screenshot-overlay">Quarantine</div>
+                </div>
+                <div class="screenshot-item" data-category="files">
+                    <img src="screenshots/history.png" alt="History" loading="lazy">
+                    <div class="screenshot-overlay">History</div>
+                </div>
+                <div class="screenshot-item" data-category="files">
+                    <img src="screenshots/content_search.png" alt="Content Search" loading="lazy">
+                    <div class="screenshot-overlay">Content Search</div>
+                </div>
+                <div class="screenshot-item" data-category="system">
+                    <img src="screenshots/process_inspector.png" alt="Process Inspector" loading="lazy">
+                    <div class="screenshot-overlay">Process Inspector</div>
+                </div>
+                <div class="screenshot-item" data-category="system">
+                    <img src="screenshots/task_manager.png" alt="Task Manager" loading="lazy">
+                    <div class="screenshot-overlay">Task Manager</div>
+                </div>
+                <div class="screenshot-item" data-category="system">
+                    <img src="screenshots/scheduler.png" alt="Scheduler" loading="lazy">
+                    <div class="screenshot-overlay">Scheduler</div>
+                </div>
+                <div class="screenshot-item" data-category="system">
+                    <img src="screenshots/startup.png" alt="Startup Manager" loading="lazy">
+                    <div class="screenshot-overlay">Startup Manager</div>
+                </div>
+                <div class="screenshot-item" data-category="system">
+                    <img src="screenshots/usb.png" alt="USB Monitor" loading="lazy">
+                    <div class="screenshot-overlay">USB Monitor</div>
+                </div>
+                <div class="screenshot-item" data-category="system">
+                    <img src="screenshots/updater.png" alt="Auto Updater" loading="lazy">
+                    <div class="screenshot-overlay">Auto Updater</div>
+                </div>
+                <div class="screenshot-item" data-category="system">
+                    <img src="screenshots/notifications.png" alt="Notifications" loading="lazy">
+                    <div class="screenshot-overlay">Notifications</div>
+                </div>
+                <div class="screenshot-item" data-category="system">
+                    <img src="screenshots/settings.png" alt="Settings" loading="lazy">
+                    <div class="screenshot-overlay">Settings</div>
+                </div>
+                <div class="screenshot-item" data-category="system">
+                    <img src="screenshots/about.png" alt="About" loading="lazy">
+                    <div class="screenshot-overlay">About</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="tech" class="tech">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Technology</span>
+                <h2>Built With</h2>
+                <p>Modern stack, zero bloat.</p>
+            </div>
+            <div class="tech-grid">
+                <div class="tech-item">
+                    <div class="tech-name">Python 3.12</div>
+                    <div class="tech-desc">Core language</div>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-name">PyQt6</div>
+                    <div class="tech-desc">Native GUI</div>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-name">SQLite</div>
+                    <div class="tech-desc">Local database</div>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-name">psutil</div>
+                    <div class="tech-desc">System info</div>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-name">winreg</div>
+                    <div class="tech-desc">Registry access</div>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-name">PyInstaller</div>
+                    <div class="tech-desc">Single .exe</div>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-name">pytest</div>
+                    <div class="tech-desc">Testing</div>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-name">loguru</div>
+                    <div class="tech-desc">Logging</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="privacy">
+        <div class="container">
+            <div class="privacy-content">
+                <div class="privacy-icon">&#128274;</div>
+                <h2>Privacy First</h2>
+                <p>
+                    All data stays on your machine. No cloud calls, no telemetry, no analytics.
+                    Even the updater only checks GitHub Releases — and you can disable it entirely.
+                </p>
+                <div class="privacy-features">
+                    <div class="privacy-feature">&#10003; Local SQLite database</div>
+                    <div class="privacy-feature">&#10003; No external APIs</div>
+                    <div class="privacy-feature">&#10003; Optional updater</div>
+                    <div class="privacy-feature">&#10003; No admin required</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-brand">
+                <span class="footer-logo">WCT</span>
+                <span>Aurora v2.2</span>
+            </div>
+            <div class="footer-links">
+                <a href="https://github.com/eshw433/windows-control-toolkit">GitHub</a>
+                <a href="https://github.com/eshw433/windows-control-toolkit/releases">Releases</a>
+                <a href="https://github.com/eshw433/windows-control-toolkit/blob/main/README.md">Docs</a>
+            </div>
+            <div class="footer-copy">
+                Shokhlat Muradov &middot; 2026 &middot; MIT License
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Tab filtering
+        const tabs = document.querySelectorAll('.tab-btn');
+        const items = document.querySelectorAll('.screenshot-item');
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                tabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                const category = tab.dataset.tab;
+                items.forEach(item => {
+                    if (category === 'all' || item.dataset.category === category) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
