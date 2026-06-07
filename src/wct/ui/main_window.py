@@ -42,6 +42,10 @@ from wct.ui.pages.about_page import AboutPage
 from wct.ui.pages.process_inspector_page import ProcessInspectorPage
 from wct.ui.pages.task_manager_page import TaskManagerPage
 from wct.ui.pages.scheduler_page import SchedulerPage
+from wct.ui.pages.startup_page import StartupPage
+from wct.ui.pages.usb_page import UsbPage
+from wct.ui.pages.content_search_page import ContentSearchPage
+from wct.ui.pages.updater_page import UpdaterPage
 from wct.ui.pages.welcome_screen import WelcomeScreen
 
 # Lazy page factory map — imported only when first navigated to
@@ -64,6 +68,10 @@ _PAGE_FACTORIES: dict[str, type] = {
     "process_inspector": ProcessInspectorPage,
     "task_manager":      TaskManagerPage,
     "scheduler":         SchedulerPage,
+    "startup":           StartupPage,
+    "usb":               UsbPage,
+    "content_search":    ContentSearchPage,
+    "updater":           UpdaterPage,
 }
 
 
@@ -84,6 +92,10 @@ _NAV_KEYS = [
     ("process_inspector", "process_inspector"),
     ("task_manager", "task_manager"),
     ("scheduler", "scheduler"),
+    ("startup_manager", "startup"),
+    ("usb_monitor", "usb"),
+    ("content_search", "content_search"),
+    ("updater", "updater"),
     ("settings", "settings"),
     ("about", "about"),
 ]
@@ -194,6 +206,10 @@ class MainWindow(QMainWindow):
         self.process_inspector_page = ProcessInspectorPage()
         self.task_manager_page = TaskManagerPage()
         self.scheduler_page = SchedulerPage()
+        self.startup_page = StartupPage()
+        self.usb_page = UsbPage()
+        self.content_search_page = ContentSearchPage()
+        self.updater_page = UpdaterPage()
 
         _core_pages = {
             "dashboard":     self.dashboard_page,
@@ -214,6 +230,10 @@ class MainWindow(QMainWindow):
             "process_inspector": self.process_inspector_page,
             "task_manager":  self.task_manager_page,
             "scheduler":     self.scheduler_page,
+            "startup":       self.startup_page,
+            "usb":           self.usb_page,
+            "content_search": self.content_search_page,
+            "updater":       self.updater_page,
         }
 
         for key, widget in _core_pages.items():

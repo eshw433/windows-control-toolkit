@@ -467,6 +467,44 @@ _TRANSLATIONS: dict[str, dict[str, str]] = {
 
     # File rules drag-drop
     "drop_files_hint": {"en": "Drag & drop a file or folder here to create a rule", "ru": "Перетащите файл или папку для создания правила", "az": "Qayda yaratmaq üçün fayl və ya qovluq sürükləyin"},
+
+    # Startup Manager
+    "startup_manager": {"en": "Startup Manager", "ru": "Автозагрузка", "az": "Avtomatik başlatma"},
+    "disable": {"en": "Disable", "ru": "Отключить", "az": "Deaktiv et"},
+    "enable": {"en": "Enable", "ru": "Включить", "az": "Aktiv et"},
+    "col_command": {"en": "Command", "ru": "Команда", "az": "Əmr"},
+    "col_location": {"en": "Location", "ru": "Расположение", "az": "Yerləşmə"},
+    "col_enabled": {"en": "Enabled", "ru": "Включено", "az": "Aktiv"},
+    "col_type": {"en": "Type", "ru": "Тип", "az": "Növ"},
+
+    # USB Monitor
+    "usb_monitor": {"en": "USB Monitor", "ru": "USB монитор", "az": "USB monitoru"},
+    "devices_connected": {"en": "devices connected", "ru": "устройств подключено", "az": "cihaz qoşulub"},
+    "col_drive": {"en": "Drive", "ru": "Диск", "az": "Disk"},
+    "col_device_id": {"en": "Device ID", "ru": "ID устройства", "az": "Cihaz ID"},
+
+    # Content Search
+    "content_search": {"en": "Content Search", "ru": "Поиск по содержимому", "az": "Məzmun axtarışı"},
+    "search": {"en": "Search", "ru": "Найти", "az": "Axtar"},
+    "missing_fields": {"en": "Fill in folder and query", "ru": "Укажите папку и запрос", "az": "Qovluq və sorğu daxil edin"},
+    "results_found": {"en": "results found", "ru": "найдено результатов", "az": "nəticə tapıldı"},
+    "col_line": {"en": "Line", "ru": "Строка", "az": "Sətir"},
+    "col_preview": {"en": "Preview", "ru": "Превью", "az": "Önbaxış"},
+    "col_matches": {"en": "Matches", "ru": "Совпадения", "az": "Uyğunluqlar"},
+
+    # Updater
+    "updater": {"en": "Auto Updater", "ru": "Обновления", "az": "Yeniləmələr"},
+    "current_version": {"en": "Current version", "ru": "Текущая версия", "az": "Cari versiya"},
+    "latest_version": {"en": "Latest version", "ru": "Последняя версия", "az": "Son versiya"},
+    "checking": {"en": "Checking...", "ru": "Проверка...", "az": "Yoxlanılır..."},
+    "check_failed": {"en": "Check failed", "ru": "Проверка не удалась", "az": "Yoxlama alınmadı"},
+    "update_available": {"en": "Update available", "ru": "Доступно обновление", "az": "Yeniləmə mövcuddur"},
+    "up_to_date": {"en": "Up to date", "ru": "Актуальная версия", "az": "Ən son versiya"},
+    "release_notes": {"en": "Release notes", "ru": "Примечания к релизу", "az": "Buraxılış qeydləri"},
+    "check_updates": {"en": "Check for Updates", "ru": "Проверить обновления", "az": "Yeniləmələri yoxla"},
+    "open_release_page": {"en": "Open Release Page", "ru": "Открыть страницу релиза", "az": "Buraxılış səhifəsini aç"},
+    "download": {"en": "Download", "ru": "Скачать", "az": "Yüklə"},
+    "download_instructions": {"en": "The release page will open in your browser. Download the latest WCT.exe and replace the current one.", "ru": "Страница релиза откроется в браузере. Скачайте новый WCT.exe и замените текущий.", "az": "Buraxılış səhifəsi brauzerdə açılacaq. Son WCT.exe-ni yükləyin və mövcud olanı əvəz edin."},
 }
 
 _current_lang = "en"

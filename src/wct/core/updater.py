@@ -11,7 +11,7 @@ from loguru import logger
 from wct import __version__
 
 
-_RELEASES_URL = "https://api.github.com/repos/shokhlat/windows-control-toolkit/releases/latest"
+_RELEASES_URL = "https://api.github.com/repos/eshw433/windows-control-toolkit/releases/latest"
 
 
 @dataclass
