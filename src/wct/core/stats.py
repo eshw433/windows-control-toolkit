@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from collections import Counter, defaultdict
+from collections import Counter as _StdCounter, defaultdict
 from dataclasses import dataclass
 
 
@@ -154,7 +154,7 @@ def module_breakdown(events: list[dict]) -> dict[str, int]:
 
 def hour_of_day_distribution(timestamps: list[str]) -> dict[int, int]:
     from datetime import datetime
-    counter: Counter[int] = Counter()
+    counter: _StdCounter[int] = _StdCounter()
     for ts in timestamps:
         try:
             if ts.endswith("Z"):
@@ -164,3 +164,40 @@ def hour_of_day_distribution(timestamps: list[str]) -> dict[int, int]:
         except ValueError:
             continue
     return dict(counter)
+
+
+class Counter:
+    """Simple counter with increment / reset / total API."""
+
+    def __init__(self) -> None:
+        self._data: _StdCounter[str] = _StdCounter()
+
+    def increment(self, key: str) -> None:
+        self._data[key] += 1
+
+    def get(self, key: str) -> int:
+        return self._data.get(key, 0)
+
+    def reset(self, key: str) -> None:
+        self._data[key] = 0
+
+    def total(self) -> int:
+        return sum(self._data.values())
+
+
+class RollingAverage:
+    """Rolling window average."""
+
+    def __init__(self, window: int = 5) -> None:
+        self._window = window
+        self._values: list[float] = []
+
+    def add(self, value: float) -> None:
+        self._values.append(value)
+        if len(self._values) > self._window:
+            self._values.pop(0)
+
+    def value(self) -> float:
+        if not self._values:
+            return 0.0
+        return sum(self._values) / len(self._values)

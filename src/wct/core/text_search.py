@@ -109,3 +109,16 @@ def regex_filter(items: list[dict[str, Any]], pattern: str, keys: list[str]) -> 
                 out.append(it)
                 break
     return out
+
+
+class TextSearch:
+    """Simple text search wrapper used by tests."""
+
+    def __init__(self, query: str) -> None:
+        self._query = query
+
+    def matches(self, text: str) -> bool:
+        return matches_query(self._query, text)
+
+    def filter(self, items: list[str]) -> list[str]:
+        return [s for s in items if self.matches(s)]

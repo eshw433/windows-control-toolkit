@@ -6,6 +6,38 @@ from pathlib import Path
 
 from wct.modules.files.models import ActionType, PlannedFileAction, ScannedFile
 from wct.shared.models import FILE_CATEGORIES
+from wct.shared.models import FileInfo
+
+
+class RuleEngine:
+    """High-level rule engine with add_rule API for tests."""
+
+    def __init__(self) -> None:
+        self._rules: list[dict] = []
+        self._core = FileRuleEngine()
+
+    def add_rule(self, rule: dict) -> None:
+        self._rules.append(rule)
+        self._core.set_rules(self._rules)
+
+    def evaluate(self, file: FileInfo) -> list[PlannedFileAction]:
+        scanned = ScannedFile(
+            path=Path(file.path),
+            name=file.name,
+            extension=file.extension,
+            size=file.size,
+        )
+        action = self._core.evaluate(scanned)
+        # Only return actions backed by active user rules
+        if not self._rules:
+            return []
+        active = [r for r in self._rules if r.get("enabled", True)]
+        if not active:
+            return []
+        # Built-in actions start with "built-in:" — user rules do not
+        if not action.rule_name.startswith("built-in:"):
+            return [action]
+        return []
 
 
 class FileRuleEngine:

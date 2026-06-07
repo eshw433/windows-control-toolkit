@@ -3,6 +3,7 @@ from __future__ import annotations
 import os
 import re
 from dataclasses import dataclass
+from enum import Enum
 from pathlib import Path
 
 
@@ -118,6 +119,25 @@ def assess_many(processes: list[dict]) -> list[dict]:
         d["note"] = ", ".join(report.reasons)
         out.append(d)
     return out
+
+
+class RiskLevel(str, Enum):
+    LOW = "low"
+    MEDIUM = "medium"
+    HIGH = "high"
+    CRITICAL = "critical"
+
+
+@dataclass
+class RiskResult:
+    score: int
+    level: str
+    reasons: list[str]
+
+
+def score_connection(remote_port: int = 0, remote_ip: str = "", exe_name: str = "") -> RiskResult:
+    report = assess(exe_name, remote_ports=[remote_port])
+    return RiskResult(score=report.score, level=report.level, reasons=report.reasons)
 
 
 def color_for_score(score: int) -> str:

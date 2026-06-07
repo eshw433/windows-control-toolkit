@@ -9,8 +9,12 @@ _UNITS_RATE = ["B/s", "KB/s", "MB/s", "GB/s"]
 
 def human_size(size: int | float, *, decimals: int = 1) -> str:
     n = float(size)
+    if n == 0:
+        return "0 B"
     for unit in _UNITS_BINARY:
         if n < 1024 or unit == _UNITS_BINARY[-1]:
+            if unit == "B" and n == int(n):
+                return f"{int(n)} {unit}"
             return f"{n:.{decimals}f} {unit}"
         n /= 1024
     return f"{n:.{decimals}f} PB"
